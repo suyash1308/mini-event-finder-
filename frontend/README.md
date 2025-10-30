@@ -174,12 +174,6 @@ Get details of a single event by ID.
 
 ---
 
-## 📸 Optional Screenshots
-
-*(Add here if you have screenshots or UI images — optional)*
-
----
-
 ## 🧾 Clean Commit History
 
 * Initial commit - Mini Event Finder project
