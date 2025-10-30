@@ -4,7 +4,19 @@ import cors from "cors";
 import { v4 as uuidv4 } from "uuid";
 
 const app = express();
-app.use(cors());
+
+// ✅ Allow CORS from your deployed frontend (Vercel)
+app.use(
+  cors({
+    origin: [
+      "https://mini-event-finder-f7qs.vercel.app", // your deployed frontend
+      "http://localhost:3000" // for local development
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+  })
+);
+
 app.use(express.json());
 
 // In-memory storage
@@ -68,6 +80,11 @@ app.get("/api/events/:id", (req, res) => {
   const event = events.find((e) => e.id === req.params.id);
   if (!event) return res.status(404).json({ message: "Event not found" });
   res.json(event);
+});
+
+// ✅ Default route for testing
+app.get("/", (req, res) => {
+  res.send("🚀 Mini Event Finder Backend is running!");
 });
 
 // Start server
