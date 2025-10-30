@@ -1,0 +1,44 @@
+import React, { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+
+function EventDetails() {
+  const { id } = useParams();
+  const [event, setEvent] = useState(null);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchEvent = async () => {
+      setLoading(true);
+      try {
+        const res = await fetch(`http://localhost:5000/api/events/${id}`);
+        if (!res.ok) throw new Error("Failed to fetch event details");
+        const data = await res.json();
+        setEvent(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchEvent();
+  }, [id]);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p style={{ color: "red" }}>{error}</p>;
+  if (!event) return <p>Event not found</p>;
+
+  return (
+    <div className="details-container">
+      <h2>{event.title}</h2>
+      <p><strong>Description:</strong> {event.description}</p>
+      <p><strong>Location:</strong> {event.location}</p>
+      <p><strong>Date:</strong> {event.date}</p>
+      <p><strong>Max Participants:</strong> {event.maxParticipants}</p>
+      <p><strong>Current Participants:</strong> {event.currentParticipants}</p>
+      <Link to="/">← Back to Events</Link>
+    </div>
+  );
+}
+
+export default EventDetails;
