@@ -114,30 +114,7 @@ Content-Type: application/json
   "date": "2025-12-01",
   "maxParticipants": 50
 }
-```
 
----
-
-## 🖼️ Screenshots / Demo
-
-**Homepage:**
-
-```
-🎉 Mini Event Finder
-Create New Event
-Event Title
-Description
-Location
-dd-mm-yyyy
-Max Participants
-Add Event
-Search events...
-Available Events
-– Tech Meetup 2025 (Pune)
-– React Workshop (Mumbai)
-```
-
-(You can add screenshots or a Loom video link here later.)
 
 ---
 
@@ -163,12 +140,7 @@ Available Events
 
 ---
 
-## 💻 Deployment Links (Optional)
-
-| Service               | URL                                                                          |
-| --------------------- | ---------------------------------------------------------------------------- |
-| **Frontend (Vercel)** | [https://mini-event-finder.vercel.app](https://mini-event-finder.vercel.app) |
-| **Backend (Render)**  | https:                                                                       |
+                                                                    |
 
 
 
