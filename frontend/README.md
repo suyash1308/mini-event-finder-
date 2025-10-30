@@ -1,4 +1,8 @@
 @"
+Frontend (Vercel): https://mini-event-finder-f7qs.vercel.app
+Backend (Render): https://mini-event-finder-backend.onrender.com
+
+Loom Demo Video:** [https://www.loom.com/share/e7d5e9fe851941f096cf4a8cadd90702]
 
 # 🎉 Mini Event Finder
 
