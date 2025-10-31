@@ -16,11 +16,14 @@ function EventList() {
     maxParticipants: "",
   });
 
+  // ✅ Use environment variable for API URL
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+
   const fetchEvents = async () => {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("http://localhost:5000/api/events");
+      const res = await fetch(`${API_URL}/api/events`);
       if (!res.ok) throw new Error("Failed to fetch events");
       const data = await res.json();
       setEvents(data);
@@ -42,7 +45,7 @@ function EventList() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:5000/api/events", {
+      const res = await fetch(`${API_URL}/api/events`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newEvent),
