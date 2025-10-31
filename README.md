@@ -7,8 +7,8 @@ Built using **React (Vite)** on the frontend and **Express.js** for the backend,
 
 ## 🌐 Live Links
 
-* **Frontend (Vercel):** [https://mini-event-finder.vercel.app](https://mini-event-finder.vercel.app)
-* **Backend (Render):** [https://mini-event-finder-backend.onrender.com](https://mini-event-finder-backend.onrender.com)
+* **Frontend (Vercel):** [[https://mini-event-finder.vercel.app](https://mini-event-finder.vercel.app](https://mini-event-finder-f7qs.vercel.app/))
+* **Backend (Render):** [[https://mini-event-finder-backend.onrender.com](https://mini-event-finder-backend.onrender.com](https://mini-event-finder-backend.onrender.com))
 * **Demo Video (Loom):** [https://www.loom.com/share/e7d5e9fe851941f096cf4a8cadd90702](https://www.loom.com/share/e7d5e9fe851941f096cf4a8cadd90702)
 
 ---
