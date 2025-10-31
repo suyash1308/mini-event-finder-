@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
+// ✅ Use the same backend URL as in App.js
+const API_BASE_URL = "https://mini-event-finder-backend.onrender.com/api";
+
 function EventDetails() {
   const { id } = useParams();
   const [event, setEvent] = useState(null);
@@ -11,8 +14,13 @@ function EventDetails() {
     const fetchEvent = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`http://localhost:5000/api/events/${id}`);
-        if (!res.ok) throw new Error("Failed to fetch event details");
+        const res = await fetch(`${API_BASE_URL}/events/${id}`);
+        if (!res.ok) {
+          if (res.status === 404) {
+            throw new Error("Event not found");
+          }
+          throw new Error("Failed to fetch event details");
+        }
         const data = await res.json();
         setEvent(data);
       } catch (err) {
@@ -26,7 +34,7 @@ function EventDetails() {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p style={{ color: "red" }}>{error}</p>;
-  if (!event) return <p>Event not found</p>;
+  if (!event) return <p>No event details available.</p>;
 
   return (
     <div className="details-container">
