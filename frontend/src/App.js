@@ -6,6 +6,7 @@ import EventDetails from "./EventDetails";
 // ✅ Correct API base URL (no markdown)
 const API_BASE_URL = "https://mini-event-finder-backend.onrender.com/api";
 
+
 function EventList() {
   const [events, setEvents] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");

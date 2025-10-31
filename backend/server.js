@@ -80,6 +80,10 @@ app.get("/api/events/:id", (req, res) => {
   if (!event) return res.status(404).json({ message: "Event not found" });
   res.json(event);
 });
+app.get("/api/events", (req, res) => {
+  res.json([{ id: 1, title: "Sample Event", location: "Pune", date: "2025-11-01" }]);
+});
+
 
 // ✅ Health check route
 app.get("/", (req, res) => {
