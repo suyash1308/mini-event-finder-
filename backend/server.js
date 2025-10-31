@@ -9,7 +9,7 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "https://mini-event-finder-f7qs.vercel.app", // your deployed frontend
+      "https://mini-event-finder-dun.vercel.app", // your deployed frontend 
       "http://localhost:3000", // local frontend
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
