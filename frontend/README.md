@@ -172,7 +172,6 @@ Get details of a single event by ID.
 **Hosting:** Vercel (Frontend), Render (Backend)
 **Version Control:** Git & GitHub
 
----
 
 ## 🧾 Clean Commit History
 
